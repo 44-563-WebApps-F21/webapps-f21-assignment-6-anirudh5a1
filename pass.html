@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
  
-<body>
+
     <head>
         <title>java script</title>
     </head>
-
+<body>
 <h2>Pass phrase by Anirudh</h2>
+
 
 <form>
     <label for="form1_age">Enter the secret phrase </label>
@@ -19,13 +20,14 @@
 </form>
 
 <p id="result">This text will be replaced </p>
+<img src="images/goat.jpg" class="img-thumbnail" alt="goat" onclick="newImage();" id="images" style="width: 200; height: 200;">
 
 
 <script> 
 
 var correct=0
 var wrong=0
-
+count = 0
 function processPhrase (){
 console.log("Getting form values")
 sphrase = document.getElementById("secret_phrase").value
@@ -42,4 +44,22 @@ if(sphrase == phrase){
     out.innerHTML = "Wrong:" +wrong
 }
 }
+function newImage(){
+            switch(count){
+                case 0 :
+                    document.getElementById("images").src="images/goat.jpg"
+                    count = count+1
+                    break;
+                case 1 :
+                    document.getElementById("images").src="images/rat.jpg"
+                    count = count+1
+                    break;
+                case 2 :
+                    document.getElementById("images").src="images/snake.jpg"
+                    count = 0
+                    break;       
+            }
+        }
 </script>
+</body>
+</html>
